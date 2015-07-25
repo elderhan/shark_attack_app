@@ -12,13 +12,16 @@
 	<h3><%= victim.name %></h3>
 	<h4><%= @shark.name %> attacked a(n) <%= victim.victim_species %> in <%= victim.location %>. It was 
 	<% if victim.fatal %>
-		<%= "fatal" %>
+		<%= "fatal." %>
 	<% else %>
-		<%= "not fatal" %>
+		<%= "not fatal." %>
 	<% end %>
 	</h4>
 	<strong>A description of the events:</strong>
 	<p><%= victim.description %></p>
+	<%= link_to "Delete", victim_path(victim),
+		method:  :delete,
+		data: {confirm: "Are you sure?"} %>
 <% end %>
 
 <h2>Add a new victim:</h2>

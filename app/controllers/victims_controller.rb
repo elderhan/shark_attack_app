@@ -7,7 +7,10 @@ class VictimsController < ApplicationController
 	end
 
 	def destroy
-
+		@shark = Shark.find(params[:shark_id])
+		@victim = @shark.victims.find(params[:id])
+		@victim.destroy
+		redirect_to shark_path(@shark)
 	end
 
 	def victim_params
