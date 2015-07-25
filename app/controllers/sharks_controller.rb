@@ -42,7 +42,7 @@ class SharksController < ApplicationController
 	end
 
 	def shark_params
-		params.require(:shark).permit(:name, :shark_species, :weight, :age
+		params.require(:shark).permit(:name, :shark_species, :weight, :age,
 			:description)
 	end
 

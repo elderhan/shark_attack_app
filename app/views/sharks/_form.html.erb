@@ -1,0 +1,31 @@
+<% if @shark.errors.present? %>
+  <% @shark.errors.full_messages.each do |msg| %>
+  	  <p> <%= msg %> </p>
+  <% end %>
+<% end %>
+
+<%= form_for @shark do |f| %> 
+
+<p><%= f.label :name, "Shark Name" %><br>
+	<%= f.text_field :name %><br>
+</p>
+
+<p><%= f.label :shark_species, "Shark Species" %><br>
+	<%= f.text_field :shark_species %><br>
+</p>
+
+<p><%= f.label :age, "Shark Age" %><br>
+	<%= f.text_field :age %><br>
+</p>
+
+<p><%= f.label :weight, "Shark Weight" %><br>
+	<%= f.text_field :weight %><br>
+</p>
+
+<p><%= f.label :description, "Shark Description" %><br>
+	<%= f.text_area :description %><br>
+</p>
+
+<%= f.submit %>
+
+<% end %>

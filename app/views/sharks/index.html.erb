@@ -1,1 +1,12 @@
 <h1> Shark Attack! </h1>
+
+<% @sharks.each do |shark| %>
+<h3><%= link_to shark.name, shark_path(shark) %></h3>
+<small><%= link_to "Edit", edit_shark_path(shark) %> | 
+<%= link_to "Delete", shark_path(shark), 
+	method: :delete,
+	data: {confirm: "Are you sure?"} %> </small><br><br>
+
+<% end %>
+
+<%= link_to "New Shark", new_shark_path(@shark) %>
