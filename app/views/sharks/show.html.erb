@@ -19,7 +19,7 @@
 	</h4>
 	<strong>A description of the events:</strong>
 	<p><%= victim.description %></p>
-	<%= link_to "Delete", victim_path(victim),
+	<%= link_to "Delete", [victim.shark, victim],
 		method:  :delete,
 		data: {confirm: "Are you sure?"} %>
 <% end %>
