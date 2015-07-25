@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  victim_species: MyString
+  location: MyString
+  description: MyString
+  fatal: false
+  shark_id: 
+
+two:
+  name: MyString
+  victim_species: MyString
+  location: MyString
+  description: MyString
+  fatal: false
+  shark_id: 
