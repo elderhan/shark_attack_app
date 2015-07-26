@@ -4,28 +4,32 @@
   <% end %>
 <% end %>
 
-<%= form_for @shark do |f| %> 
+<%= form_for @shark, :html => { :multipart => true } do |form| %>
 
-<p><%= f.label :name, "Shark Name" %><br>
-	<%= f.text_field :name %><br>
+<p><%= form.label :name, "Shark Name" %><br>
+	<%= form.text_field :name %><br>
 </p>
 
-<p><%= f.label :shark_species, "Shark Species" %><br>
-	<%= f.text_field :shark_species %><br>
+<p><%= form.label :shark_species, "Shark Species" %><br>
+	<%= form.text_field :shark_species %><br>
 </p>
 
-<p><%= f.label :age, "Shark Age" %><br>
-	<%= f.text_field :age %><br>
+<p><%= form.label :age, "Shark Age" %><br>
+	<%= form.text_field :age %><br>
 </p>
 
-<p><%= f.label :weight, "Shark Weight" %><br>
-	<%= f.text_field :weight %><br>
+<p><%= form.label :weight, "Shark Weight" %><br>
+	<%= form.text_field :weight %><br>
 </p>
 
-<p><%= f.label :description, "Shark Description" %><br>
-	<%= f.text_area :description %><br>
+<p><%= form.label :description, "Shark Description" %><br>
+	<%= form.text_area :description %><br>
 </p>
 
-<%= f.submit %>
+<p>
+   <%= form.file_field :avatar %><br>
+</p>
+
+<%= form.submit %>
 
 <% end %>

@@ -5,6 +5,7 @@ class SharksController < ApplicationController
 
 	def show
 		@shark = Shark.find(params[:id])
+		#@victim = @shark.victims.build
 	end
 
 	def new
@@ -43,7 +44,7 @@ class SharksController < ApplicationController
 
 	def shark_params
 		params.require(:shark).permit(:name, :shark_species, :weight, :age,
-			:description)
+			:description, :avatar)
 	end
 
 end

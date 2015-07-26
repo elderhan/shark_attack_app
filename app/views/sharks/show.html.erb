@@ -1,5 +1,6 @@
 <h2><%= @shark.name %></h2>
 <h3><%= @shark.shark_species %> | Age: <%= @shark.age %> | <%= @shark.weight %> lbs</h3>
+<%= image_tag @shark.avatar.url(:medium) %>
 <p><%= @shark.description %></p>
 
 <%= link_to "Home", root_path %> | <%= link_to "Edit", edit_shark_path(@shark) %> | 
@@ -21,26 +22,9 @@
 	<p><%= victim.description %></p>
 	<%= link_to "Delete", [victim.shark, victim],
 		method:  :delete,
-		data: {confirm: "Are you sure?"} %>
+		data: {confirm: "Are you sure?"} %> | 
+		<%= link_to "Edit", edit_shark_victim_path(@shark, victim) %>
 <% end %>
 
 <h2>Add a new victim:</h2>
-<%= form_for([@shark, @shark.victims.build]) do |f| %>
-<p>
-<%= f.label :name %><br>
-<%= f.text_field :name %></p>
-<p>
-<%= f.label :victim_species %><br>
-<%= f.text_field :victim_species %></p>
-<p>
-<%= f.label :location %><br>
-<%= f.text_field :location %></p>
-<p>
-<%= f.label :fatal, "What this fatal?" %> 
-<%= f.check_box :fatal  %></p>
-
-<p>
-<%= f.label :description, "Describe the events in vivid detail please" %><br>
-<%= f.text_area :description %></p>
-<%= f.submit %></p>
-<% end %>
+<%= render 'victims/form' %>
